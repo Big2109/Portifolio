@@ -1,0 +1,271 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo Profisssional</title>
+  <link rel="stylesheet" href="styles_profissional.css">
+  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="https://scibhive.com.br/" target="_blank" class="sci-link img">
+        <img src="sci.png" title="Acessar Site da Empresa">
+      </a>
+  <a href="academico.html" class="academico-link img">
+    <img src="academico.png">
+  </a>
+  <a href="pessoal.html" class="eric-link img">
+    <img src="eric.png">
+  </a>
+  <video autoplay muted loop id="bg-video">
+    <source src="MyVideo_2.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos HTML5 com tags de vídeo.
+  </video>
+  <div class="content">
+    <h1>Resumo Profissional</h1>
+  </div>
+  <div class="name">
+    <a>Programador de Sistemas de Informação</a>
+  </div>
+  <div class="text">
+    <a>Sci B-Hive</a>
+    <a>06/2023 - Atualmente</a>
+    <a>- Atuou no desenvolvimento de softwares com foco em linguagens C# e JavaScript dentro do sistema de informações via API's</a>
+    <a>- Desenvolvimento de RPA's(Robotic Process Automation)</a>
+    <a>- Trabalhou como Data Base Administrator Junior em banco de dados Sql Server.</a>
+    <a>- Prestou suporte presencial e remoto(AnyDesk) à software e hardware</a>
+  </div>
+  <div class="sub">
+    <a href="pessoal.html" class="menu-link">Retornar</a>
+  </div>
+  <script src="script_profissional.js"></script>
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acadêmico</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilo para o vídeo de fundo */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Garante que o vídeo cubra todo o espaço disponível */
+      z-index: -1;
+    }
+
+    /* Estilo para o corpo da página */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Previne rolagem horizontal */
+      min-height: 100vh; /* Altura mínima da página */
+      font-family: 'Wallpoet', sans-serif;
+      background: #f0f0f0; /* Cor de fundo para evitar transparência */
+    }
+
+    /* Estilo para o conteúdo dentro da imagem de fundo */
+    .content {
+      font-size: 40px;
+      position: relative;
+      text-align: center;
+      padding-top: 10px;
+      color: white; /* Cor do texto */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      opacity: 0; /* Inicialmente invisível */
+      transition: opacity 2s ease-in-out; /* Transição suave de opacity */
+    }
+
+    .content h1 {
+      font-size: 75px;
+    }
+
+    .menu-link {
+      font-family: 'Tiro Tamil', serif; /* Aplica a fonte Geostar Fill */
+      font-size: 20px; /* Tamanho da fonte */
+      text-decoration: none; /* Remove sublinhado padrão */
+      color: white; /* Cor do texto do link */
+      padding: 10px 20px; /* Espaçamento interno */
+      border-radius: 5px; /* Borda arredondada */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      opacity: 0; /* Inicialmente invisível */
+      transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
+    }
+
+    .menu-link:hover {
+      text-decoration: none;
+      color: grey; /* Altera a cor ao passar o mouse */
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 3.5s;
+    }
+
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .bottom-link {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .custom-mt-5 {
+      margin-top: 150px; /* Ajuste o valor conforme necessário */
+    }
+
+    .logo {
+      margin-top: 50px; /* Ajuste o valor conforme necessário */
+      z-index: 999;
+    }
+
+    .foto {
+      margin-top: 750px;
+    }
+
+    .name {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 45px;
+      color: white;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 4.5s ease-in-out;
+      margin-top: 50px;
+      max-width: 750px;
+    }
+
+    .academico {
+      margin-top: 150px; /* Ajuste o valor conforme necessário */
+      width: 1500px; /* Ajuste o valor conforme necessário */
+      height: auto;
+    }
+
+    .profissional {
+      margin-top: 100px; /* Ajuste o valor conforme necessário */
+      width: 1500px; /* Ajuste o valor conforme necessário */
+      height: auto;
+    }
+
+     /* Estilo para o conteúdo do subtitulo */
+     .text {
+      position: absolute;
+      padding: 20px;
+      left: 50%;
+      margin-top: 350px; /* Centraliza verticalmente */
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      height: 100vh; /* Tamanho da tela inteira */
+      color: white; /* Cor do texto */
+      text-align: left; /* Centraliza o texto */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      font-family: 'Tiro Tamil', serif;
+      font-size: 30px; /* Tamanho da fonte */
+      opacity: 1; /* Inicialmente invisível */
+      transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
+      height: 300px; /* Largura do logotipo */
+    }
+
+    .text a:hover {
+      transform: scale(1.1); /* Aumenta em 10% quando o mouse estiver sobre */
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid p-0">
+    <video autoplay muted loop id="bg-video" class="position-fixed">
+      <source src="MyVideo_2.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos HTML5 com tags de vídeo.
+    </video>
+
+    <div class="content text-center mt-5">
+      <h1>Resumo Profissional</h1>
+    </div>
+
+    <!-- Linha para o nome -->
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center name">
+        <a>Programador de Sistemas de Informação</a>
+      </div>
+    </div>
+
+    <!-- Linha de imagens superior -->
+    <div class="row justify-content-center logo">
+      <div class="col-md-3 text-center"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
+        <a href="https://www.cruzeirodosul.edu.br/" target="_blank" class="sci-link img">
+          <img src="sci.png" class="img-fluid" title="Acessar Site da Empresa" style="max-width: 550px; height: auto; opacity: 1; transition: opacity 2.0s ease-in-out;">
+        </a>
+      </div>
+    </div>
+
+    <!-- Linha de texto -->
+    <div class="row justify-content-center text">
+      <div class="col-sm-6 col-md-3 img-container">
+        <div class="text" style="width: 600px;">
+          <a>Sci B-Hive</a>
+          <a>06/2023 - Atualmente</a>
+          <a>. Atuou no desenvolvimento de softwares com foco em linguagens C# e JavaScript dentro do sistema de informações via API's</a>
+          <a>. Desenvolvimento de RPA's(Robotic Process Automation)</a>
+          <a>. Trabalhou como Data Base Administrator Junior em banco de dados Sql Server.</a>
+          <a>. Prestou suporte presencial e remoto(AnyDesk) à software e hardware</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha de imagens inferior -->
+    <div class="container foto">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
+          <div class="img-container text-center eric">
+            <a href="pessoal.html" class="eric-link img d-block">
+              <img src="eric.png" class="img-fluid" style="max-width: 650px; height: auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
+          <div class="img-container text-center academico">
+            <a href="academico.html" class="academico-link img d-block">
+              <img src="academico.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link "Retornar" ao final da página -->
+    <div class="fixed-bottom text-center bottom-link">
+      <a href="menu.html" class="btn btn-outline-primary btn-lg">Menu</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

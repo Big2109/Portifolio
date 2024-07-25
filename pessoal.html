@@ -1,0 +1,284 @@
+<!--<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mim</title>
+  <link rel="stylesheet" href="styles_pessoal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="eric_1">
+    <img src="test.gif">
+  </a>
+  <a href="academico.html" class="academico-link img">
+    <img src="academico.png">
+  </a>
+  <a href="profissional.html" class="profissional-link img">
+    <img src="profissional.png">
+  </a>
+  <a href="https://wa.me/5511959097822?text=Ol%C3%A1%2C%20te%20encontrei%20em%20seu%20Portif%C3%B3lio%20!" target="_blank" class="whats-link img">
+    <img src="whats.png" title="WhatsApp">
+  </a>
+  <a href="https://github.com/Big2109/HtmlSharp" target="_blank" class="github-link img">
+    <img src="github.png" title="Github">
+  </a>
+  <a href="https://www.linkedin.com/in/eric-marques-bighi-00a501272/" target="_blank" class="linkedin-link img">
+    <img src="linkedin.png" title="LinkedIn">
+  </a>
+  <video autoplay muted loop id="bg-video">
+    <source src="MyVideo_2.mp4" type="video/mp4">
+    Seu navegador não suporta vídeos HTML5 com tags de vídeo.
+  </video>
+  <div class="content">
+    <h1>Informações Pessoais</h1>
+  </div>
+  <div class="name">
+    <a>Eric Marques Bighi</a>
+  </div>
+  <div class="text">
+    <a>Nacionalidade: Brasileiro</a>
+    <a>Idade: 24 anos</a>
+    <a>Estado Civil: Solteiro</a>
+    <a>Endereço: Rua Marmelópolis, 93 - Jardim Itápolis - São Paulo/SP</a>
+    <a>Celular/Whatsapp: +55 11 959097822</a>
+    <a>E-mail: ericmbighi@gmail.com</a>
+  </div>
+  <div class="redes">
+    <a>Redes Sociais</a>
+  </div>
+  <div class="sub">
+    <a href="menu.html" class="menu-link">Retornar</a>
+  </div>
+  <script src="script_pessoal.js"></script>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Mim</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilo para o vídeo de fundo */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Garante que o vídeo cubra todo o espaço disponível */
+      z-index: -1;
+    }
+
+    /* Estilo para o corpo da página */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Previne rolagem horizontal */
+      min-height: 100vh; /* Altura mínima da página */
+      font-family: 'Wallpoet', sans-serif;
+      background: #f0f0f0; /* Cor de fundo para evitar transparência */
+    }
+
+    /* Estilo para o conteúdo dentro da imagem de fundo */
+    .content {
+      font-size: 40px;
+      position: relative;
+      text-align: center;
+      padding-top: 10px;
+      color: white; /* Cor do texto */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      opacity: 0; /* Inicialmente invisível */
+      transition: opacity 2s ease-in-out; /* Transição suave de opacity */
+      
+    }
+
+    .content h1{
+      font-size: 75px;
+    }
+
+    .menu-link {
+      font-family: 'Tiro Tamil', serif; /* Aplica a fonte Geostar Fill */
+      font-size: 20px; /* Tamanho da fonte */
+      text-decoration: none; /* Remove sublinhado padrão */
+      color: white; /* Cor do texto do link */
+      padding: 10px 20px; /* Espaçamento interno */
+      border-radius: 5px; /* Borda arredondada */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      opacity: 0; /* Inicialmente invisível */
+      transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
+    }
+
+    .menu-link:hover {
+      text-decoration: none;
+      color: grey; /* Altera a cor ao passar o mouse */
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 3.5s;
+    }
+
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .bottom-link {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .custom-mt-5 {
+      margin-top: 100px; /* Ajuste o valor conforme necessário */
+    }
+
+    .logos {
+      margin-top: 300px; /* Ajuste o valor conforme necessário */
+    }
+
+    .foto {
+      right: 10%;
+    }
+    
+    .name {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 50px;
+      color: white;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 4.5s ease-in-out;
+      margin-top: 150px;
+    }
+
+    .academico {
+      margin-top: 150px; /* Ajuste o valor conforme necessário */
+      width: 1500px; /* Ajuste o valor conforme necessário */
+      height: auto;
+    }
+
+    .profissional {
+      margin-top: 100px; /* Ajuste o valor conforme necessário */
+      width: 1500px; /* Ajuste o valor conforme necessário */
+      height: auto;
+    }
+        /* Estilo para o conteúdo do subtitulo */
+        .text {
+      position: absolute;
+      margin-top: 300px; /* Centraliza verticalmente */
+      left: 100%; /* Centraliza horizontalmente */
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;    
+      align-items: left;
+      height: 100vh; /* Tamanho da tela inteira */
+      color: white; /* Cor do texto */
+      text-align: left; /* Centraliza o texto */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      font-family: 'Tiro Tamil', serif;
+      font-size: 28px; /* Tamanho da fonte */
+      opacity: 1; /* Inicialmente invisível */
+      transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
+      width: 1100px; /* Largura do logotipo */
+    }
+    .text a:hover {
+      transform: scale(1.1); /* Aumenta em 10% quando o mouse estiver sobre */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid p-0">
+    <video autoplay muted loop id="bg-video" class="position-fixed">
+      <source src="MyVideo_2.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos HTML5 com tags de vídeo.
+    </video>
+  
+    <div class="content text-center mt-5">
+      <h1>Informações Pessoais</h1>
+    </div>
+     <!-- Linha para o nome -->
+     <div class="row justify-content-center name">
+      <div class="col-md-12">
+        <a>Eric Marques Bighi</a>
+      </div>
+    </div>
+<!-- Linha de imagens superior -->
+<div class="row justify-content-center mt-5">
+  <div class="col-sm-6 col-md-3 img-container foto">
+    <img src="test.gif" class="img-fluid" style="max-width: 500px; height: auto;">
+  </div>
+  <div class="col-sm-6 col-md-3 img-container">
+    <div class="text" style="width: 600px; height: auto;">
+      <a>Nacionalidade: Brasileiro</a>
+      <a>Idade: 24 anos</a>
+      <a>Estado Civil: Solteiro</a>
+      <a>Endereço: Rua Marmelópolis, 93 - Jardim Itápolis - São Paulo/SP</a>
+      <a>Celular/Whatsapp: +55 11 959097822</a>
+      <a>E-mail: ericmbighi@gmail.com</a>
+    </div>
+  </div>
+</div>
+<!-- Linha de imagens inferior -->
+<div class="row justify-content-center logos">
+  <div class="col-md-3 text-center"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
+    <a href="https://wa.me/5511959097822?text=Ol%C3%A1%2C%20te%20encontrei%20em%20seu%20Portif%C3%B3lio%20!" target="_blank" class="whats-link img">
+      <img src="whats.png" class="img-fluid" title="WhatsApp" style="width: 150px; height: auto; opacity: 1; transition: opacity 2.0s ease-in-out;">
+    </a>
+  </div>
+  <div class="col-md-3 text-center"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
+    <a href="https://github.com/Big2109/HtmlSharp" target="_blank" class="github-link img">
+      <img src="github.png" class="img-fluid" title="Github" style="width: 150px; height: auto;">
+    </a>
+  </div>
+  <div class="col-md-3 text-center"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
+    <a href="https://www.linkedin.com/in/eric-marques-bighi-00a501272/" target="_blank" class="linkedin-link img">
+      <img src="linkedin.png" class="img-fluid" title="LinkedIn" style="width: 180px; height: auto;">
+    </a>
+  </div>
+</div>
+    
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
+          <div class="img-container text-center academico">
+            <a href="academico.html" class="academico-link img d-block">
+              <img src="academico.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
+          <div class="img-container text-center profissional">
+            <a href="profissional.html" class="profissional-link img d-block">
+              <img src="profissional.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+            </a>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <!-- Link "Retornar" ao final da página -->
+    <div class="fixed-bottom text-center bottom-link">
+      <a href="menu.html" class="btn btn-outline-primary btn-lg">Menu</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

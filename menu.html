@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linguagens de Programação</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilo para o vídeo de fundo */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Garante que o vídeo cubra todo o espaço disponível */
+      z-index: -1;
+    }
+
+    /* Estilo para o corpo da página */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Previne rolagem horizontal */
+      min-height: 100vh; /* Altura mínima da página */
+      font-family: 'Wallpoet', sans-serif;
+      background: #f0f0f0; /* Cor de fundo para evitar transparência */
+    }
+
+    /* Estilo para o conteúdo dentro da imagem de fundo */
+    .content {
+      font-size: 40px;
+      position: relative;
+      text-align: center;
+      padding-top: 10px;
+      color: white; /* Cor do texto */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      opacity: 0; /* Inicialmente invisível */
+      transition: opacity 2s ease-in-out; /* Transição suave de opacity */
+      
+    }
+
+    .content h1{
+      font-size: 70px;
+    }
+
+    .menu-link {
+      font-family: 'Tiro Tamil', serif; /* Aplica a fonte Geostar Fill */
+      font-size: 20px; /* Tamanho da fonte */
+      text-decoration: none; /* Remove sublinhado padrão */
+      color: white; /* Cor do texto do link */
+      padding: 10px 20px; /* Espaçamento interno */
+      border-radius: 5px; /* Borda arredondada */
+      z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+      opacity: 0; /* Inicialmente invisível */
+      transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
+    }
+
+    .menu-link:hover {
+      text-decoration: none;
+      color: grey; /* Altera a cor ao passar o mouse */
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 3.5s;
+    }
+
+    .img-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .bottom-link {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .custom-mt-5 {
+      margin-top: 100px; /* Ajuste o valor conforme necessário */
+    }
+    
+    .eric {
+      margin-top: 250px; /* Ajuste o valor conforme necessário */
+      width: 1500px; /* Ajuste o valor conforme necessário */
+      height: auto;
+    }
+
+    .academico {
+      margin-top: 150px; /* Ajuste o valor conforme necessário */
+      width: 1500px; /* Ajuste o valor conforme necessário */
+      height: auto;
+    }
+
+    .profissional {
+      margin-top: 100px; /* Ajuste o valor conforme necessário */
+      width: 1500px; /* Ajuste o valor conforme necessário */
+      height: auto;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid p-0">
+    <video autoplay muted loop id="bg-video" class="position-fixed">
+      <source src="MyVideo_2.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos HTML5 com tags de vídeo.
+    </video>
+  
+    <div class="content text-center mt-5">
+      <h1>Projetos</h1>
+    </div>
+  
+    <!-- Linha de imagens superior -->
+    <div class="row justify-content-center custom-mt-5">
+      <div class="col-sm-6 col-md-3 img-container">
+        <a href="projeto-c.html" class="sql-link img d-block">
+          <img src="c.png" class="img-fluid" style="max-width: 200px; height: auto;">
+        </a>
+      </div>
+      <div class="col-sm-6 col-md-3 img-container">
+        <a href="projeto-sql.html" class="c-link img d-block">
+          <img src="sql.png" class="img-fluid" style="width: 210px; height: auto;">
+        </a>
+      </div>
+    </div>
+  
+    <!-- Linha de imagens inferior -->
+    <div class="row justify-content-center custom-mt-5">
+      <div class="col-sm-7 col-md-3 img-container">
+        <a href="projeto-js.html" class="js-link img d-block">
+          <img src="js.png" class="img-fluid" style="width: 200px; height: auto;">
+        </a>
+      </div>
+      <div class="col-sm-7 col-md-3 img-container">
+        <a href="menu.html" class="html5-link img d-block">
+          <img src="html5.png" class="img-fluid" style="max-width: 220px; height: auto;">
+        </a>
+      </div>
+    </div>
+  
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
+          <div class="img-container text-center eric">
+            <a href="pessoal.html" class="eric-link img d-block">
+              <img src="eric.png" class="img-fluid" style="max-width: 700px; height: auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
+          <div class="img-container text-center academico">
+            <a href="academico.html" class="academico-link img d-block">
+              <img src="academico.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
+          <div class="img-container text-center profissional">
+            <a href="profissional.html" class="profissional-link img d-block">
+              <img src="profissional.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Link "Retornar" ao final da página -->
+    <div class="fixed-bottom text-center bottom-link">
+      <a href="index.html" class="btn btn-outline-primary btn-lg">Início</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

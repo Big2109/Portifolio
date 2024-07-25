@@ -1,0 +1,49 @@
+/* Estilo para o corpo da página */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Previne rolagem horizontal */
+  height: 1200px; /* Mínimo de 1200 pixels de altura */
+}
+
+/* Estilo para o vídeo de fundo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 100%;
+  object-fit: cover; /* Garante que o vídeo cubra todo o espaço disponível */
+  z-index: -1;
+}
+
+/* Estilo para o conteúdo centralizado */
+.content {
+  bottom: 10%;
+  z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
+  
+  font-size: px;
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 2s ease-in-out; /* Transição suave de opacidade */
+}
+
+.content h1 {
+  font-size: 70px; /* Tamanho da fonte desejado */
+  font-family: 'Wallpoet', sans-serif;
+}
+
+.menu-link {
+  padding: 40px;
+  font-family: 'Tiro Tamil', serif;
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  border-radius: 5px;
+  opacity: 1; /* Inicialmente visível */
+  transition: opacity 0.4s ease-in-out; /* Transição suave de opacidade */
+}
+
+.menu-link:hover {
+  text-decoration: none;
+  color: grey; /* Altera a cor ao passar o mouse */
+}

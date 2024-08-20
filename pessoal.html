@@ -1,61 +1,3 @@
-<!--<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Mim</title>
-  <link rel="stylesheet" href="styles_pessoal.css">
-  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <a class="eric_1">
-    <img src="test.gif">
-  </a>
-  <a href="academico.html" class="academico-link img">
-    <img src="academico.png">
-  </a>
-  <a href="profissional.html" class="profissional-link img">
-    <img src="profissional.png">
-  </a>
-  <a href="https://wa.me/5511959097822?text=Ol%C3%A1%2C%20te%20encontrei%20em%20seu%20Portif%C3%B3lio%20!" target="_blank" class="whats-link img">
-    <img src="whats.png" title="WhatsApp">
-  </a>
-  <a href="https://github.com/Big2109/HtmlSharp" target="_blank" class="github-link img">
-    <img src="github.png" title="Github">
-  </a>
-  <a href="https://www.linkedin.com/in/eric-marques-bighi-00a501272/" target="_blank" class="linkedin-link img">
-    <img src="linkedin.png" title="LinkedIn">
-  </a>
-  <video autoplay muted loop id="bg-video">
-    <source src="MyVideo_2.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos HTML5 com tags de vídeo.
-  </video>
-  <div class="content">
-    <h1>Informações Pessoais</h1>
-  </div>
-  <div class="name">
-    <a>Eric Marques Bighi</a>
-  </div>
-  <div class="text">
-    <a>Nacionalidade: Brasileiro</a>
-    <a>Idade: 24 anos</a>
-    <a>Estado Civil: Solteiro</a>
-    <a>Endereço: Rua Marmelópolis, 93 - Jardim Itápolis - São Paulo/SP</a>
-    <a>Celular/Whatsapp: +55 11 959097822</a>
-    <a>E-mail: ericmbighi@gmail.com</a>
-  </div>
-  <div class="redes">
-    <a>Redes Sociais</a>
-  </div>
-  <div class="sub">
-    <a href="menu.html" class="menu-link">Retornar</a>
-  </div>
-  <script src="script_pessoal.js"></script>
-</body>
-</html>
--->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -101,7 +43,7 @@
     }
 
     .content h1{
-      font-size: 75px;
+      font-size: 45px;
     }
 
     .menu-link {
@@ -140,7 +82,12 @@
     }
 
     .custom-mt-5 {
-      margin-top: 100px; /* Ajuste o valor conforme necessário */
+      margin-top: 50px; /* Ajuste o valor conforme necessário */
+    }
+
+    .custom-mt-text {
+      margin-top: 600px; /* Ajuste o valor conforme necessário */
+      margin-bottom: 50px;
     }
 
     .logos {
@@ -148,7 +95,7 @@
     }
 
     .foto {
-      right: 10%;
+      max-width: 100px;
     }
     
     .name {
@@ -157,7 +104,7 @@
       font-size: 50px;
       color: white;
       z-index: 1;
-      opacity: 1;
+      opacity: 0;
       transition: opacity 4.5s ease-in-out;
       margin-top: 150px;
     }
@@ -177,7 +124,7 @@
         .text {
       position: absolute;
       margin-top: 300px; /* Centraliza verticalmente */
-      left: 100%; /* Centraliza horizontalmente */
+      left: 50%; /* Centraliza horizontalmente */
       transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
@@ -191,7 +138,6 @@
       font-size: 28px; /* Tamanho da fonte */
       opacity: 1; /* Inicialmente invisível */
       transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
-      width: 1100px; /* Largura do logotipo */
     }
     .text a:hover {
       transform: scale(1.1); /* Aumenta em 10% quando o mouse estiver sobre */
@@ -216,12 +162,12 @@
       </div>
     </div>
 <!-- Linha de imagens superior -->
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center custom-mt-5">
   <div class="col-sm-6 col-md-3 img-container foto">
-    <img src="test.gif" class="img-fluid" style="max-width: 500px; height: auto;">
+    <img src="test.gif" class="img-fluid" style="max-width: 400px;">
   </div>
-  <div class="col-sm-6 col-md-3 img-container">
-    <div class="text" style="width: 600px; height: auto;">
+  <div class="col-sm-6 col-md-3 img-container custom-mt-text">
+    <div class="text" style="max-width: 400px;">
       <a>Nacionalidade: Brasileiro</a>
       <a>Idade: 24 anos</a>
       <a>Estado Civil: Solteiro</a>
@@ -238,23 +184,23 @@
       <img src="whats.png" class="img-fluid" title="WhatsApp" style="width: 150px; height: auto; opacity: 1; transition: opacity 2.0s ease-in-out;">
     </a>
   </div>
-  <div class="col-md-3 text-center"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
+  <div class="col-md-3 text-center custom-mt-5"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
     <a href="https://github.com/Big2109/HtmlSharp" target="_blank" class="github-link img">
       <img src="github.png" class="img-fluid" title="Github" style="width: 150px; height: auto;">
     </a>
   </div>
-  <div class="col-md-3 text-center"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
+  <div class="col-md-3 text-center custom-mt-5"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
     <a href="https://www.linkedin.com/in/eric-marques-bighi-00a501272/" target="_blank" class="linkedin-link img">
       <img src="linkedin.png" class="img-fluid" title="LinkedIn" style="width: 180px; height: auto;">
     </a>
   </div>
 </div>
     
-      <div class="row justify-content-center">
+      <div class="row justify-content-center custom-mt-5">
         <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
           <div class="img-container text-center academico">
             <a href="academico.html" class="academico-link img d-block">
-              <img src="academico.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+              <img src="academico.png" class="img-fluid" style="max-width: 600px;">
             </a>
           </div>
         </div>
@@ -264,7 +210,7 @@
         <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
           <div class="img-container text-center profissional">
             <a href="profissional.html" class="profissional-link img d-block">
-              <img src="profissional.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+              <img src="profissional.png" class="img-fluid" style="max-width: 600px;">
             </a>
           </div>  
         </div>

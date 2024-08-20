@@ -42,7 +42,7 @@
     }
 
     .content h1 {
-      font-size: 75px;
+      font-size: 50px;
     }
 
     .menu-link {
@@ -89,7 +89,7 @@
       margin-top: -120px;
       max-width: 100%;
       height: auto;
-      opacity: 1;
+      opacity: 0;
       transition: opacity 2.0s ease-in-out;
     }
 
@@ -100,13 +100,13 @@
     .name {
       text-align: center;
       padding: 20px 0;
-      font-size: 48px;
+      font-size: 33px;
       color: white;
       z-index: -1;
       opacity: 0;
       transition: opacity 4.5s ease-in-out;
       margin-top: 50px;
-      max-width: 650px;
+      max-width: 350px;
     }
 
     .academico {
@@ -125,8 +125,8 @@
     .text {
       position: absolute;
       padding: 20px;
-      left: 50%;
-      margin-top: 150px; /* Centraliza verticalmente */
+      left: 55%;
+      margin-top: 250px; /* Centraliza verticalmente */
       transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
@@ -137,7 +137,7 @@
       text-align: left; /* Centraliza o texto */
       z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
       font-family: 'Tiro Tamil', serif;
-      font-size: 30px; /* Tamanho da fonte */
+      font-size: 25px; /* Tamanho da fonte */
       opacity: 1; /* Inicialmente invisível */
       transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
       height: 300px; /* Largura do logotipo */
@@ -146,12 +146,6 @@
     .text a:hover {
       transform: scale(1.1); /* Aumenta em 10% quando o mouse estiver sobre */
     }
-
-    @media (max-width: 600px) {
-  body {
-    font-size: 14px;
-  }
-}
 
   </style>
 </head>
@@ -169,7 +163,7 @@
     <!-- Linha para o nome -->
     <div class="row justify-content-center">
       <div class="col-md-12 text-center name">
-        <a>Análise e Desenvolvimento de Sistemas</a>
+        <a>Análise e desenvolvimento de sistemas</a>
       </div>
     </div>
 
@@ -187,7 +181,7 @@
     <!-- Linha de texto -->
     <div class="row justify-content-center text">
       <div class="col-sm-6 col-md-3 img-container">
-        <div class="text" style="width: 500px;">
+        <div class="text" style="width: 330px;">
           <a>Universidade Cruzeiro do Sul</a>
           <a>Polo Anália Franco</a>
           <a>02/2023 - 12/2024</a>
@@ -206,7 +200,7 @@
         <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
           <div class="img-container text-center eric">
             <a href="pessoal.html" class="eric-link img d-block">
-              <img src="eric.png" class="img-fluid" style="max-width: 650px; height: auto;">
+              <img src="eric.png" class="img-fluid" style="max-width: 400px;">
             </a>
           </div>
         </div>
@@ -216,7 +210,7 @@
         <div class="col-sm-6 col-md-3 d-flex justify-content-center mb-4">
           <div class="img-container text-center profissional">
             <a href="profissional.html" class="profissional-link img d-block">
-              <img src="profissional.png" class="img-fluid" style="max-width: 2220px; height: auto;">
+              <img src="profissional.png" class="img-fluid" style="max-width: 600px;">
             </a>
           </div>  
         </div>

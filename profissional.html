@@ -8,19 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Estilo para o vídeo de fundo */
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Garante que o vídeo cubra todo o espaço disponível */
-      z-index: -1;
-    }
+#bg-img {
+  position: fixed; /* Fixa a imagem ao fundo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpg'); /* Caminho para sua imagem */
+  background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+}
+/* Estilo para o conteúdo */
+.content-img {
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+}
 
     /* Estilo para o corpo da página */
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       overflow-x: hidden; /* Previne rolagem horizontal */
@@ -79,9 +85,19 @@
       text-align: center;
       padding: 20px 0;
     }
+    .custom-button {
+  color: white; /* Cor do texto padrão */
+  border-color: white; /* Cor da borda padrão */
+}
 
-    .custom-mt-5 {
-      margin-top: 150px; /* Ajuste o valor conforme necessário */
+.custom-button:hover {
+  background-color:dodgerblue; /* Cor de fundo quando o mouse passa sobre o botão */
+  color: white; /* Cor do texto quando o mouse passa sobre o botão */
+  border-color: dodgerblue; /* Cor da borda quando o mouse passa sobre o botão */
+}
+
+    .custom-mb-5 {
+      margin-bottom: -200px; /* Ajuste o valor conforme necessário */
     }
 
     .logo {
@@ -148,12 +164,10 @@
 </head>
 <body>
   <div class="container-fluid p-0">
-    <video autoplay muted loop id="bg-video" class="position-fixed">
-      <source src="MyVideo_2.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos HTML5 com tags de vídeo.
-    </video>
-
-    <div class="content text-center mt-5">
+    <!-- Imagem de fundo -->
+    <div id="bg-img"></div>
+  </div>
+    <div class="content text-center custom-mb-5">
       <h1>Resumo Profissional</h1>
     </div>
 
@@ -212,7 +226,7 @@
 
     <!-- Link "Retornar" ao final da página -->
     <div class="fixed-bottom text-center bottom-link">
-      <a href="menu.html" class="btn btn-outline-primary btn-lg">Menu</a>
+      <a href="menu.html" class="btn btn-outline-primary btn-lg custom-button">Menu</a>
     </div>
   </div>
 

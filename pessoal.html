@@ -8,19 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Estilo para o vídeo de fundo */
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Garante que o vídeo cubra todo o espaço disponível */
-      z-index: -1;
-    }
+#bg-img {
+  position: fixed; /* Fixa a imagem ao fundo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background.jpg'); /* Caminho para sua imagem */
+  background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+}
+/* Estilo para o conteúdo */
+.content-img {
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+}
 
     /* Estilo para o corpo da página */
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       overflow-x: hidden; /* Previne rolagem horizontal */
@@ -81,6 +87,17 @@
       padding: 20px 0;
     }
 
+    .custom-button {
+  color: white; /* Cor do texto padrão */
+  border-color: white; /* Cor da borda padrão */
+}
+
+.custom-button:hover {
+  background-color:dodgerblue; /* Cor de fundo quando o mouse passa sobre o botão */
+  color: white; /* Cor do texto quando o mouse passa sobre o botão */
+  border-color: dodgerblue; /* Cor da borda quando o mouse passa sobre o botão */
+}
+
     .custom-mt-5 {
       margin-top: 50px; /* Ajuste o valor conforme necessário */
     }
@@ -124,7 +141,7 @@
         .text {
       position: absolute;
       margin-top: 300px; /* Centraliza verticalmente */
-      left: 50%; /* Centraliza horizontalmente */
+      left: 25%; /* Centraliza horizontalmente */
       transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
@@ -147,11 +164,9 @@
 </head>
 <body>
   <div class="container-fluid p-0">
-    <video autoplay muted loop id="bg-video" class="position-fixed">
-      <source src="MyVideo_2.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos HTML5 com tags de vídeo.
-    </video>
-  
+    <!-- Imagem de fundo -->
+    <div id="bg-img"></div>
+  </div>
     <div class="content text-center mt-5">
       <h1>Informações Pessoais</h1>
     </div>
@@ -164,10 +179,10 @@
 <!-- Linha de imagens superior -->
 <div class="row justify-content-center custom-mt-5">
   <div class="col-sm-6 col-md-3 img-container foto">
-    <img src="test.gif" class="img-fluid" style="max-width: 400px;">
+    <img src="test.gif" class="img-fluid" style="max-width: 400px; margin-right: 120px;">
   </div>
   <div class="col-sm-6 col-md-3 img-container custom-mt-text">
-    <div class="text" style="max-width: 400px;">
+    <div class="text" style="max-width: 400px; margin-left: 120px;">
       <a>Nacionalidade: Brasileiro</a>
       <a>Idade: 24 anos</a>
       <a>Estado Civil: Solteiro</a>
@@ -180,8 +195,8 @@
 <!-- Linha de imagens inferior -->
 <div class="row justify-content-center logos">
   <div class="col-md-3 text-center"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
-    <a href="https://wa.me/5511959097822?text=Ol%C3%A1%2C%20te%20encontrei%20em%20seu%20Portif%C3%B3lio%20!" target="_blank" class="whats-link img">
-      <img src="whats.png" class="img-fluid" title="WhatsApp" style="width: 150px; height: auto; opacity: 1; transition: opacity 2.0s ease-in-out;">
+    <a href="https://wa.me/5511959097822?text=Ol%C3%A1%2C%20te%20encontrei%20em%20seu%20Portif%C3%B3lio!" target="_blank" class="whats-link img">
+      <img src="whats.png" class="img-fluid" title="WhatsApp" style="width: 150px; height: auto; margin-top: 50px;">
     </a>
   </div>
   <div class="col-md-3 text-center custom-mt-5"> <!-- Adicionado text-center para centralizar o conteúdo dentro das colunas -->
@@ -218,7 +233,7 @@
     </div>
     <!-- Link "Retornar" ao final da página -->
     <div class="fixed-bottom text-center bottom-link">
-      <a href="menu.html" class="btn btn-outline-primary btn-lg">Menu</a>
+      <a href="menu.html" class="btn btn-outline-primary btn-lg custom-button">Menu</a>
     </div>
   </div>
 

@@ -1,52 +1,3 @@
-<!--<!DOCTYPE html>
- <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projetos - C Sharp</title>
-  <link rel="stylesheet" href="styles_c.css">
-  <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
-</head>
-<body>
-  <video autoplay muted loop id="bg-video">
-    <source src="MyVideo_2.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos HTML5 com tags de vídeo.
-  </video>
-  <video autoplay muted loop class="c-video" title="Consultando dados de domínios">
-    <source src="registrobr-c.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos HTML5 com tags de vídeo.
-  </video>
-  <div class="content">
-    <h1>Projeto C Sharp</h1>
-  </div>
-  <div class="text">
-    <a>O software foi desenvolvido em linguagem C Sharp, mais especificamente PuppeteerSharp, que é uma adpatação do NodeJs para o C#</a>
-    <a>Usando o Puppeteer que possui algumas vantagens sobre o Selenium, sua principal finalidade é a raspagem de web e coleta de dados.</a>
-    <a>Nesse modelo, verificamos domínios ".br" e checamos todos dados vinculados ao mesmo.</a>
-  </div>
-  <button id="openModalBtn" class="formulario">Acessar Script</button>
-  <div id="senhaModal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h2>Insira a senha para acessar</h2>
-      <form id="senhaForm">
-        <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-        <br><br>
-        <input type="submit" value="Acessar">
-      </form>
-    </div>
-  </div>
-    <div class="fixed-bottom text-center bottom">
-      <a href="index.html" class="btn btn-outline-primary btn-lg">Voltar ao Início</a>
-    </div>
-  </div>
-  <script src="script_c.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -57,19 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Geostar+Fill&family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Estilo para o vídeo de fundo */
-    #bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Garante que o vídeo cubra todo o espaço disponível */
-      z-index: -1;
-    }
-
+#bg-img {
+  position: fixed; /* Fixa a imagem ao fundo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('background_2.jpg'); /* Caminho para sua imagem */
+  background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+}
+/* Estilo para o conteúdo */
+.content-img {
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+}
     /* Estilo para o corpo da página */
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       overflow-x: hidden; /* Previne rolagem horizontal */
@@ -125,8 +81,6 @@
       justify-content: center;
       align-items: center;
     }
-
-
     .bottom-link {
       text-align: center;
       padding: 20px 0;
@@ -162,28 +116,35 @@
       font-size: 30px; /* Tamanho da fonte */
       opacity: 0; /* Inicialmente invisível */
       transition: opacity 4.5s ease-in-out; /* Transição suave de opacity */
-      width: 1100px; /* Largura do logotipo */
+      max-width: 700px; /* Largura do logotipo */
     }
     .text a:hover {
       transform: scale(1.1); /* Aumenta em 10% quando o mouse estiver sobre */
     }
 
-    /* Estilo para o rodapé fixo */
     .bottom-link {
-      position: fixed;
-      bottom: 20px; /* Distância do rodapé */
-      left: 50%; /* Centraliza horizontalmente */
-      transform: translateX(-50%);
+      text-align: center;
+      padding: 20px 0;
     }
+
+    .custom-button {
+  color: white; /* Cor do texto padrão */
+  border-color: white; /* Cor da borda padrão */
+}
+
+.custom-button:hover {
+  background-color:dodgerblue; /* Cor de fundo quando o mouse passa sobre o botão */
+  color: white; /* Cor do texto quando o mouse passa sobre o botão */
+  border-color: dodgerblue; /* Cor da borda quando o mouse passa sobre o botão */
+}
 
   </style>
 </head>
 <body>
   <div class="container-fluid p-0">
-    <video autoplay muted loop id="bg-video" class="position-fixed">
-      <source src="MyVideo_2.mp4" type="video/mp4">
-      Seu navegador não suporta vídeos HTML5 com tags de vídeo.
-    </video>
+    <!-- Imagem de fundo -->
+    <div id="bg-img"></div>
+  </div>
   
     <div class="content text-center mt-5">
       <h1>Raspagem Web - Domínio de email</h1>
@@ -212,7 +173,7 @@
     </div>
 
     <div class="fixed-bottom text-center bottom-link">
-      <a href="menu.html" class="btn btn-outline-primary btn-lg">Menu</a>
+      <a href="menu.html" class="btn btn-outline-primary btn-lg custom-button">Menu</a>
     </div>
   </div>
 

@@ -20,14 +20,12 @@ html, body {
 /* Estilo para o conteúdo */
 .content-img {
   position: relative;
-  z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
 }
 
 /* Estilo para o conteúdo centralizado */
 .content {
   bottom: 10%;
   z-index: 1; /* Garante que o conteúdo fique acima do vídeo */
-  
   font-size: px;
   opacity: 0; /* Inicialmente invisível */
   transition: opacity 2s ease-in-out; /* Transição suave de opacidade */
